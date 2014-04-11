@@ -8,14 +8,11 @@ get '/' do
 end
 
 get '/find-video' do
-  parser = ObjecIdParser.new(params[:vod_url])
+  parser = ObjectIdParser.new(params[:vod_url])
   begin
     id = parser.parse_id
-  rescue ObjectIdParsingError => ex
-    p ex
+    redirect VideoUrlDownloader.new(id, Requester).video_url
+  rescue ObjectIdParsingError
     redirect '/'
-    return
   end
-
-  redirect VideoUrlDownloader.new(id, Requester).video_url
 end

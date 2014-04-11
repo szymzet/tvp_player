@@ -1,6 +1,6 @@
 ObjectIdParsingError = Class.new(StandardError)
 
-class ObjecIdParser
+class ObjectIdParser
   OBJECT_ID_REGEX = %r{vod\.tvp\.pl/[\w-]+/[\w-]+/[\w-]+/[\w-]+/[\w-]+/(\d+)}
 
   def initialize(vod_url)

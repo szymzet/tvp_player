@@ -2,14 +2,14 @@ require_relative '../lib/object_id_parser'
 require 'minitest/autorun'
 require 'minitest/pride'
 
-describe ObjecIdParser do
+describe ObjectIdParser do
 
   def parse(url)
-    ObjecIdParser.new(url).parse_id
+    ObjectIdParser.new(url).parse_id
   end
 
   it 'throws when no valid object id found' do
-    parser = ObjecIdParser.new('http://vod.tvp.pl/34234239849/jdkfj30/XD')
+    parser = ObjectIdParser.new('http://vod.tvp.pl/34234239849/jdkfj30/XD')
     assert_raises(ObjectIdParsingError) { parser.parse_id }
   end
 
