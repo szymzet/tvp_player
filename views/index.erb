@@ -12,7 +12,7 @@
 <body>
 <div class="container">
   <div class="jumbotron">
-    <form action="/find-video" method="get" role="form">
+    <form action="<%= url('/find-video') %>" method="get" role="form">
       <div class="form-group">
         <label for="vod_url">Wpisz adres URL strony filmu z vod.tvp.pl</label>
         <input id="vod_url" name="vod_url" type="text" class="form-control input-lg"
